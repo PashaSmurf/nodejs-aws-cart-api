@@ -11,7 +11,6 @@ import {
 import {
   LocalAuthGuard,
   AuthService,
-  // JwtAuthGuard,
   BasicAuthGuard,
 } from './auth';
 import { User } from './users';

@@ -13,7 +13,7 @@ const { secret, expiresIn } = JWT_CONFIG;
 @Module({
   imports: [
     UsersModule,
-    PassportModule, //.register({ defaultStrategy: 'jwt' }),
+    PassportModule,
     JwtModule.register({ secret, signOptions: { expiresIn } }),
   ],
   providers: [AuthService, JwtStrategy, LocalStrategy, BasicStrategy],
