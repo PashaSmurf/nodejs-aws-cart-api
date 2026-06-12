@@ -38,3 +38,8 @@ lerna-debug.log*
 !.elasticbeanstalk/*.global.yml
 
 .env
+.venv
+node_modules
+dist
+cdk.context.json
+cdk.out/
