@@ -1,0 +1,48 @@
+# Exclude git metadata and version control
+.git
+.gitignore
+
+# Exclude IDE configuration files
+.idea
+.vscode
+*.swp
+*.swo
+
+# Exclude environment files (secrets should not be in Docker image)
+.env
+.env.local
+.env.*.local
+
+# Exclude compiled output (will be generated during build)
+dist
+*.tsbuildinfo
+
+# Exclude dependencies from source (will be reinstalled in Docker)
+node_modules
+
+# Exclude package lock files (will be generated during build)
+package-lock.json
+
+# Exclude AWS CDK artifacts (not needed for runtime)
+cdk.out
+cdk/
+cdk.json
+cdk.context.json
+
+# Exclude test files and coverage reports (not needed in production)
+test
+coverage
+.nyc_output
+*.spec.ts
+
+# Exclude documentation files
+README.md
+docs
+
+# Exclude build artifacts
+build
+
+# Exclude OS files
+.DS_Store
+.env.example
+Thumbs.db
