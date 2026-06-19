@@ -93,7 +93,7 @@ export class CartApiStack extends cdk.Stack {
     );
 
     // RDS Database Instance with fixed password
-    const dbPassword = 'CartApi2024Pass123!';
+    const dbPassword = '';
     const database = new rds.DatabaseInstance(this, 'CartDatabase', {
       engine: rds.DatabaseInstanceEngine.postgres({
         version: rds.PostgresEngineVersion.VER_14,

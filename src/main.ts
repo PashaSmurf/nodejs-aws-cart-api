@@ -6,19 +6,24 @@ import { AppModule } from './app.module';
 import { ConfigService } from '@nestjs/config';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  try {
+    const app = await NestFactory.create(AppModule);
 
-  const configService = app.get(ConfigService);
+    const configService = app.get(ConfigService);
 
-  const port = configService.get('APP_PORT') || 4000;
+    const port = configService.get('APP_PORT') || 3000;
 
-  app.enableCors({
-    origin: (req, callback) => callback(null, true),
-  });
-  app.use(helmet());
+    app.enableCors({
+      origin: (req, callback) => callback(null, true),
+    });
+    app.use(helmet());
 
-  await app.listen(port, () => {
-    console.log('App is running on %s port', port);
-  });
+    await app.listen(port, '0.0.0.0', () => {
+      console.log('App is running on %s port', port);
+    });
+  } catch (error) {
+    console.error('Failed to bootstrap application:', error);
+    process.exit(1);
+  }
 }
 bootstrap();

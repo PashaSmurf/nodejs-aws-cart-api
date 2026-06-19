@@ -1,0 +1,48 @@
+{
+  "AWSEBDockerrunVersion": "1",
+  "Image": {
+    "Name": "cart-api:latest",
+    "Update": "true"
+  },
+  "Ports": [
+    {
+      "ContainerPort": "3000",
+      "HostPort": "80"
+    }
+  ],
+  "Logging": "/var/log/eb-docker",
+  "Environment": [
+    {
+      "Name": "APP_PORT",
+      "Value": "3000"
+    },
+    {
+      "Name": "DB_HOST",
+      "Value": "cartapistack-cartdatabasedb741a8d-mz5pmztw8bv4.cqlm0ei6m7fb.us-east-1.rds.amazonaws.com"
+    },
+    {
+      "Name": "DB_PORT",
+      "Value": "5432"
+    },
+    {
+      "Name": "DB_USERNAME",
+      "Value": ""
+    },
+    {
+      "Name": "DB_PASSWORD",
+      "Value": ""
+    },
+    {
+      "Name": "DB_NAME",
+      "Value": "cart_db"
+    },
+    {
+      "Name": "DB_SSL",
+      "Value": "false"
+    },
+    {
+      "Name": "NODE_ENV",
+      "Value": "production"
+    }
+  ]
+}
